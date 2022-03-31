@@ -1,22 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Input from './components/Input';
+import Label from './components/Label';
+import Button from './components/Button';
 
 function App() {
+
+  const [postalCodeOrigin , setPostalCodeOrigin ] = useState('');
+  const [postalCodeDestination , setPostalCodeDestination]  = useState('');
+  const [weigthOrder , setWeigthOrder]  = useState('');
+
+  const inputPostalCodeOrigin = (event) => {
+    setPostalCodeOrigin(event.target.value);    
+  }
+
+  const inputPostalCodeDestination = (event) => {
+    setPostalCodeDestination(event.target.value);    
+  }
+
+  const inputWeigthOrder = (event) =>{
+    setWeigthOrder(event.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="">
+      <header className="">
+          
+          <Label name="Postal Code Origin:"    />
+          <Input inputValue={inputPostalCodeOrigin} />   
+
+          <Label name="Postal Code Destination:"  />
+          <Input inputValue={inputPostalCodeDestination} />   
+
+          <Label name="Weigth:" />
+          <Input inputValue={inputWeigthOrder} />   
+
+          <Button name="Calculate" postalCodeOrigin={postalCodeOrigin} postalCodeDestination={postalCodeDestination}  weigthOrder={weigthOrder}  />
+
       </header>
     </div>
   );
