@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import Input from './components/Input';
 import Label from './components/Label';
-import Button from './components/UI/Button/Button';
+import ButtonCalculateFreight from './components/UI/Button/ButtonCalculateFreight';
 
 function App() {
 
@@ -23,8 +23,7 @@ function App() {
   }
 
   return (
-    <div className="">
-      <header className="">
+    <div className="">     
           
           <Label name="Postal Code Origin:"    />
           <Input inputValue={inputPostalCodeOrigin} />   
@@ -35,9 +34,9 @@ function App() {
           <Label name="Weigth:" />
           <Input inputValue={inputWeigthOrder} />   
 
-          <Button name="Calculate" postalCodeOrigin={postalCodeOrigin} postalCodeDestination={postalCodeDestination}  weigthOrder={weigthOrder}  />
-
-      </header>
+          <ButtonCalculateFreight postalCodeOrigin={postalCodeOrigin}  
+                                  postalCodeDestination={postalCodeDestination} 
+                                  weigthOrder={weigthOrder} />    
     </div>
   );
 }
